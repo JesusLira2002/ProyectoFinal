@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Empleados</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="login-section">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="username" placeholder="Usuario">
+    <input type="password" id="password" placeholder="Contraseña">
+    <button onclick="login()">Ingresar</button>
+    <p id="login-error" class="error"></p>
+  </div>
+
+  <div id="panel-section" style="display: none;">
+    <h2>Panel de Empleados</h2>
+    <button onclick="logout()">Cerrar Sesión</button>
+    <div>
+      <input type="text" id="nombreBuscar" placeholder="Buscar por nombre">
+      <button onclick="buscar()">Buscar</button>
+      <button onclick="obtenerEmpleados()">Mostrar Todos</button>
+    </div>
+    <table id="empleadosTable">
+      <thead>
+        <tr><th>Nombre</th><th>Apellidos</th><th>Teléfono</th><th>Correo</th><th>Dirección</th><th>Acciones</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <h3>Agregar / Editar Empleado</h3>
+    <input type="hidden" id="idEmpleado">
+    <input type="text" id="nombre" placeholder="Nombre">
+    <input type="text" id="apellidos" placeholder="Apellidos">
+    <input type="text" id="telefono" placeholder="Teléfono">
+    <input type="email" id="correo" placeholder="Correo">
+    <input type="text" id="direccion" placeholder="Dirección">
+    <button onclick="guardarEmpleado()">Guardar</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
